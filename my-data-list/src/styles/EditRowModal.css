@@ -1,0 +1,109 @@
+/* --- Cabecera del Modal --- */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--primary-color-translucent);
+  margin-top: -1rem; 
+}
+
+.modal-header h2 {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.modal-content .close-btn {
+  position: static;
+  order: 3;
+}
+
+/* Botón de Eliminar (Papelera) */
+.delete-icon-btn.list-delete {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  width: 44px; /* Más grande */
+  height: 44px; /* Más grande */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  order: 1;
+}
+
+.delete-icon-btn.list-delete:hover:not(:disabled) {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+}
+
+/* --- Uploader de Imagen Personalizado --- */
+.image-preview-wrapper.edit-list-image {
+  margin-bottom: 1.5rem;
+}
+
+.image-preview-wrapper.edit-list-image > label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.current-image-container {
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  border: 2px dashed var(--primary-color-translucent);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.current-image-container:hover {
+  border-color: var(--accent-color);
+}
+
+.current-image-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.current-image-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background-color: var(--background-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+#cover-image-edit-input {
+  display: none;
+}
+
+.change-image-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--primary-color-translucent);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.change-image-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}

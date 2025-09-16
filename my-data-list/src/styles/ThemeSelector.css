@@ -1,0 +1,92 @@
+.theme-modal {
+  max-width: 600px;
+}
+.theme-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.theme-modal-header h2 {
+  margin: 0;
+}
+
+/* --- NUEVO: Interruptor Animado Dark/Light --- */
+.theme-switch-container {
+  display: flex;
+  align-items: center;
+}
+#theme-switch-checkbox {
+  display: none; /* Ocultamos el checkbox real */
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 32px;
+  background-color: var(--background-color);
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--primary-color-translucent);
+}
+.switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#theme-switch-checkbox:checked + .theme-switch .switch-handle {
+  transform: translateX(27px);
+}
+/* --- Fin del Interruptor --- */
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.theme-card {
+  border: 1px solid var(--primary-color-translucent);
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+.theme-preview {
+  display: flex;
+  height: 80px;
+}
+.color-swatch {
+  flex: 1;
+}
+.theme-name {
+  padding: 1rem;
+  background-color: var(--surface-color);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.theme-name svg {
+  color: var(--accent-color);
+  width: 20px;
+  height: 20px;
+}
+

@@ -1,0 +1,68 @@
+/* --- TEMA POR DEFECTO (MINT) --- */
+:root {
+  --background-color: #1E2A2B;
+  --surface-color: #334F49;
+  --primary-color: #5FAD93;
+  --accent-color: #A6E1C3;
+  --text-primary: #E6F2ED;
+  --text-secondary: #B6CAC2;
+  --error-color: #ff6b6b;
+  --primary-color-translucent: rgba(95, 173, 147, 0.3);
+  --border-radius-base: 5px;
+}
+
+/* --- TEMAS OSCUROS --- */
+body[data-theme="navy"] { --background-color: #0A192F; --surface-color: #172A45; --primary-color: #3A7DFF; --accent-color: #64FFDA; --text-primary: #CCD6F6; --text-secondary: #8892B0; --primary-color-translucent: rgba(58, 125, 255, 0.2); }
+body[data-theme="teal"] { --background-color: #0d1a1a; --surface-color: #132e2e; --primary-color: #008080; --accent-color: #48d1cc; --text-primary: #e6f2f2; --text-secondary: #8cb3b3; --primary-color-translucent: rgba(0, 128, 128, 0.3); }
+body[data-theme="rose"] { --background-color: #000000; --surface-color: #1C1C1E; --primary-color: #C562AF; --accent-color: #B33791; --text-primary: #ffdaed; --text-secondary: #FEC5F6; --primary-color-translucent: rgba(224, 108, 190, 0.2); }
+body[data-theme="crimson"] { --background-color: #1A1A1A; --surface-color: #2C2C2C; --primary-color: #990000; --accent-color: #FF4D4D; --text-primary: #FFFFFF; --text-secondary: #A9A9A9; --primary-color-translucent: rgba(153, 0, 0, 0.3); }
+body[data-theme="midnight"] { --background-color: #000000; --surface-color: #1C1C1E; --primary-color: #333333; --accent-color: #58A6FF; --text-primary: #FFFFFF; --text-secondary: #8A8A8E; --primary-color-translucent: rgba(88, 166, 255, 0.2); }
+body[data-theme="grape"] { --background-color: #1b1620; --surface-color: #3B2F4A; --primary-color: #724fdb; --accent-color: #9D86E2; --text-primary: #E0D9EF; --text-secondary: #A79CBF; --primary-color-translucent: rgba(127, 90, 240, 0.2); }
+body[data-theme="forest"] { --background-color: #1B2A1B; --surface-color: #2E3E2E; --primary-color: #228B22; --accent-color: #6B8E23; --text-primary: #DFF0D8; --text-secondary: #A3BFA3; --primary-color-translucent: rgba(34, 139, 34, 0.3); }
+
+
+/* --- TEMAS CLAROS --- */
+body[data-theme="sky"] { --background-color: #F0F4F8; --surface-color: #FFFFFF; --primary-color: #A7C7E7; --accent-color: #4A90E2; --text-primary: #2F4858; --text-secondary: #5C7A89; --primary-color-translucent: rgba(167, 199, 231, 0.5); }
+body[data-theme="cupcake"] { --background-color: #FAF4F4; --surface-color: #FFFFFF; --primary-color: #FBCFE8; --accent-color: #E55380; --text-primary: #332D2D; --text-secondary: #756969; --primary-color-translucent: rgba(251, 207, 232, 0.5); }
+body[data-theme="spreadsheet"] { --background-color: #f4f8f5; --surface-color: #FFFFFF; --primary-color: #2f9650; --accent-color: #2F855A; --text-primary: #2A433A; --text-secondary: #4A5568; --primary-color-translucent: rgba(198, 246, 213, 0.6); }
+body[data-theme="presentation"] { --background-color: #FFF7ED; --surface-color: #ffffff; --primary-color: #ffa33a; --accent-color: #F97316; --text-primary: #4C2B0A; --text-secondary: #78441B; --primary-color-translucent: rgba(251, 191, 142, 0.5); }
+body[data-theme="lemonade"] { --background-color: #FFFFF0; --surface-color: #FFFFFF; --primary-color: #FEF08A; --accent-color: #F59E0B; --text-primary: #42360B; --text-secondary: #6D5B19; --primary-color-translucent: rgba(254, 240, 138, 0.6); }
+body[data-theme="lavender"] { --background-color: #e7e6f8; --surface-color: #FFFFFF; --primary-color: #c77dff; --accent-color: #7C3AED; --text-primary: #37304A; --text-secondary: #463a5c; --primary-color-translucent: rgba(199, 125, 255, 0.6); }
+body[data-theme="solar"] { --background-color: #FFFBEB; --surface-color: #FFFFFF; --primary-color: #FEF3C7; --accent-color: #F59E0B; --text-primary: #423207; --text-secondary: #6C541B; --primary-color-translucent: rgba(254, 243, 199, 0.6); }
+body[data-theme="aqua"] { --background-color: #ECFEFF; --surface-color: #FFFFFF; --primary-color: #A5F3FC; --accent-color: #0891B2; --text-primary: '#1E4048'; --text-secondary: '#3B6068'; --primary-color-translucent: rgba(165, 243, 252, 0.6); }
+body[data-theme="rosewater"] { --background-color: #F5E0DC; --surface-color: #FFFFFF; --primary-color: #F8C8C3; --accent-color: #E46876; --text-primary: #4C3839; --text-secondary: #7B5A5D; --primary-color-translucent: rgba(248, 200, 195, 0.6); }
+
+/* --- Estilos Base --- */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  /* Esta es la regla clave que ahora funcionará correctamente */
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+:root {
+  --header-height: 4.25rem; /* Adjust if you change header padding/font-size */
+}

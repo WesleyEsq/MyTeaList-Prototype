@@ -1,0 +1,44 @@
+.create-list-modal .input-group-modal label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cover-image-uploader {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--border-radius-base);
+  border: 2px dashed var(--primary-color-translucent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--background-color);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.cover-image-uploader:hover {
+  border-color: var(--accent-color);
+}
+
+#cover-image-input {
+  display: none;
+}
+
+.cover-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.cover-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

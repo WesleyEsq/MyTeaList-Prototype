@@ -1,0 +1,207 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem; /* Añade padding para pantallas pequeñas */
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: var(--border-radius-base);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  border: 1px solid var(--primary-color-translucent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  
+  /* --- CAMBIOS CLAVE PARA SCROLL --- */
+  max-height: 90vh; /* El modal no puede ser más alto que el 90% de la pantalla */
+  overflow-y: auto; /* Si el contenido se desborda, aparece una barra de scroll DENTRO del modal */
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 0;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.banner-uploader {
+  margin-bottom: 1.5rem;
+}
+
+.banner-preview-container {
+  width: 100%;
+  height: 150px;
+  border-radius: var(--border-radius-base);
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden; /* Muy importante para contener la imagen */
+  border: 2px dashed var(--primary-color-translucent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- ESTILO PARA CONTENER LA IMAGEN --- */
+.banner-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+}
+
+.banner-preview-placeholder {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.banner-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.banner-preview-container:hover .banner-overlay-text {
+  opacity: 1;
+}
+
+#banner-input, #file-input {
+  display: none;
+}
+
+.image-uploader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- ESTILO PARA CONTENER LA IMAGEN --- */
+.profile-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+  background-color: var(--background-color);
+  border: 2px solid var(--primary-color-translucent);
+}
+
+.file-label {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.file-label:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.input-group-modal {
+  margin-bottom: 1.5rem;
+}
+
+.input-group-modal input,
+.input-group-modal textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color-translucent);
+  border-radius: var(--border-radius-base);
+  color: var(--text-primary);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-group-modal textarea {
+  resize: vertical; /* Permite al usuario ajustar la altura verticalmente */
+  min-height: 80px;
+}
+
+.input-group-modal input:focus,
+.input-group-modal textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.error-message-modal {
+  color: #ff6b6b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.save-btn:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
