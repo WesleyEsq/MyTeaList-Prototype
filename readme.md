@@ -11,7 +11,7 @@ Welcome. Tealists is a web app to organize and manage lists and spreadsheet type
 The first requirement to get the projects source code locally would be to clone it, this can be done with the github interfaces or through the git command 
 
 ```
-git clone https://github.com/WesleyEsq/TeaListsPrototype
+git clone https://github.com/WesleyEsq/TeaLists-Prototype
 ```
 
 Next would be the commands to get the project dependencies and to run the program. After you get the project through github, you need to first do this command to install the project with it's dependencies. You need to have npm and node.js in your system before excecuting this in your console.
