@@ -12,7 +12,7 @@
 }
 
 /* --- TEMAS OSCUROS --- */
-body[data-theme="navy"] { --background-color: #0A192F; --surface-color: #172A45; --primary-color: #3A7DFF; --accent-color: #64FFDA; --text-primary: #CCD6F6; --text-secondary: #8892B0; --primary-color-translucent: rgba(58, 125, 255, 0.2); }
+body[data-theme="navy"] { --background-color: #0A192F; --surface-color: #172A45; --primary-color: #3871e2; --accent-color: #64ceff; --text-primary: #dce2f7; --text-secondary: #a9b4d3; --primary-color-translucent: rgba(58, 125, 255, 0.2); }
 body[data-theme="teal"] { --background-color: #0d1a1a; --surface-color: #132e2e; --primary-color: #008080; --accent-color: #48d1cc; --text-primary: #e6f2f2; --text-secondary: #8cb3b3; --primary-color-translucent: rgba(0, 128, 128, 0.3); }
 body[data-theme="rose"] { --background-color: #000000; --surface-color: #1C1C1E; --primary-color: #C562AF; --accent-color: #B33791; --text-primary: #ffdaed; --text-secondary: #FEC5F6; --primary-color-translucent: rgba(224, 108, 190, 0.2); }
 body[data-theme="crimson"] { --background-color: #1A1A1A; --surface-color: #2C2C2C; --primary-color: #990000; --accent-color: #FF4D4D; --text-primary: #FFFFFF; --text-secondary: #A9A9A9; --primary-color-translucent: rgba(153, 0, 0, 0.3); }

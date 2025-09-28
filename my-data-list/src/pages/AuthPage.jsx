@@ -4,7 +4,7 @@ import '../styles/AuthPage.css';
 import InfoCarousel from '../components/InfoCarousel.jsx'; 
 
 function AuthPage() {
-  // Este componente ya no necesita pasar props, App.js maneja el estado globalmente.
+  // Pagina de inicio para login y registro de usuarios.
   return (
     <div className="auth-page-container">
       <div className="info-panel">

@@ -1,6 +1,9 @@
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 
+// --- Funciones del servicio de usuario --- //
+
+// Obtiene el perfil de usuario por su UID, identificador unico propio
 export const getUserProfile = async (uid) => {
   if (!uid) return null;
   const userRef = doc(db, "users", uid);
@@ -8,6 +11,7 @@ export const getUserProfile = async (uid) => {
   return docSnap.exists() ? { uid, ...docSnap.data() } : null;
 };
 
+// Crea un documento de perfil de usuario si no existe
 export const createUserProfileDocument = async (userAuth, additionalData = {}) => {
   if (!userAuth) return;
   const userRef = doc(db, "users", userAuth.uid);
@@ -28,6 +32,7 @@ export const createUserProfileDocument = async (userAuth, additionalData = {}) =
   }
 };
 
+// Actualiza el perfil de usuario con los datos proporcionados
 export const updateUserProfile = async (uid, dataToUpdate) => {
   if (!uid) return;
   const userRef = doc(db, "users", uid);

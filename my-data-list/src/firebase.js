@@ -10,6 +10,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -19,17 +20,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
-
-/*
-FB_API_KEY="AIzaSyCffgOPOfgDPH6Eas16K7MXj4yFpdQWivU"
-FB_AUTH_DOMAIN="mytealist.firebaseapp.com"
-FB_PROJECT_ID="mytealist"
-FB_STORAGE_BUCKET="mytealist.firebasestorage.app"
-FB_MESSAGING_SENDER_ID="1000289748496"
-FB_APP_ID="1:1000289748496:web:69ec4f2d095bc8694d2c95"
-FB_MEASUREMENT_ID="G-L1J7JZLTZP"
-*/
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

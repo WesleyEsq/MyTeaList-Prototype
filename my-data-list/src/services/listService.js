@@ -2,6 +2,10 @@ import { collection, doc, addDoc, onSnapshot, query, where, orderBy, updateDoc, 
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
 
+// --- Funciones del servicio de listas --- //
+
+
+// Sube una imagen de portada para una lista y devuelve su URL
 const uploadListCoverImage = async (file, userId) => {
   if (!file) return null; // Devuelve null si no hay archivo
   const filePath = `list_covers/${userId}/${Date.now()}_${file.name}`;
@@ -10,6 +14,7 @@ const uploadListCoverImage = async (file, userId) => {
   return await getDownloadURL(storageRef);
 };
 
+// Sube una imagen para una fila y devuelve su URL
 const uploadRowImage = async (file, userId, listId) => {
     if (!file) return "";
     const filePath = `row_images/${userId}/${listId}/${Date.now()}_${file.name}`;
@@ -18,6 +23,7 @@ const uploadRowImage = async (file, userId, listId) => {
     return await getDownloadURL(storageRef);
 };
 
+// Crea una nueva lista con los datos proporcionados
 export const createList = async (listData, userId) => {
   const coverImageURL = await uploadListCoverImage(listData.coverFile, userId) || "";
   await addDoc(collection(db, "lists"), {
@@ -30,6 +36,7 @@ export const createList = async (listData, userId) => {
   });
 };
 
+// Obtiene todas las listas de un usuario específico
 export const getUserLists = (userId, callback) => {
   if (!userId) return () => {};
   const q = query(
@@ -43,6 +50,7 @@ export const getUserLists = (userId, callback) => {
   });
 };
 
+// Obtiene una lista específica por su ID
 export const getListById = (listId, callback) => {
   const listRef = doc(db, "lists", listId);
   return onSnapshot(listRef, (docSnap) => {
@@ -55,6 +63,7 @@ export const getListById = (listId, callback) => {
   });
 };
 
+// Añade una nueva fila a una lista existente
 export const addRowToList = async (listId, rowData, userId) => {
   const imageURL = await uploadRowImage(rowData.rowFile, userId, listId);
   const listRef = doc(db, "lists", listId);
@@ -72,7 +81,7 @@ export const addRowToList = async (listId, rowData, userId) => {
   return newRow;
 };
 
-// NUEVA FUNCIÓN: Actualiza los detalles de una lista
+// Actualiza los detalles de una lista
 export const updateListDetails = async (listId, updates) => {
   const { title, description, newCoverFile } = updates;
   const listRef = doc(db, "lists", listId);
@@ -87,12 +96,11 @@ export const updateListDetails = async (listId, updates) => {
   await updateDoc(listRef, dataToUpdate);
 };
 
-// NUEVA FUNCIÓN: Elimina una lista y sus datos asociados.
+// Elimina una lista y sus datos asociados.
+// TODO: Implementar eliminación de imágenes almacenadas!!!
 export const deleteList = async (listId) => {
   if (!listId) return;
   const listRef = doc(db, "lists", listId);
   await deleteDoc(listRef);
-  // NOTA: La eliminación de imágenes en Storage es más compleja (requiere Cloud Functions para hacerlo de forma robusta)
-  // Por ahora, solo eliminamos el documento de Firestore.
 };
 

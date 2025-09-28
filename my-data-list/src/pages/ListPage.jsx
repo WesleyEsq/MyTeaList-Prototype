@@ -14,6 +14,7 @@ import TableRow from '../components/TableRow.jsx';
 import '../styles/ListPage.css';
 
 // --- Iconos ---
+//Diseñados para adaptarse a los temas del sistema (claro/oscuro)
 const BackIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>;
 const PlusIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>;
 const SearchIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>;
@@ -61,7 +62,7 @@ function ListPage({ currentUser }) {
     }
   };
 
-  // NUEVO: Filtra las filas basándose en el término de búsqueda
+ 
   const filteredRows = useMemo(() => {
     if (!searchTerm) return rows;
     return rows.filter(row =>
@@ -70,7 +71,7 @@ function ListPage({ currentUser }) {
   }, [rows, searchTerm]);
   
   if (isLoading) { return <Spinner />; }
-  if (!list) { /* ... (código de lista no encontrada) ... */ }
+  if (!list) { /* ... (código de lista no encontrada) ... osea nada ... ah*/ }
   
   const isAuthor = currentUser && currentUser.uid === list.authorId;
 

@@ -15,14 +15,14 @@ function ListDetailCard({ list, author, isAuthor, onEditClick }) {
         ) : (
           <div className="list-detail-placeholder-image"></div>
         )}
-      </div>
-      <div className="list-detail-content">
-        
         {isAuthor && (
           <button className="edit-list-btn" onClick={onEditClick} title="Edit list details">
             <EditIcon />
           </button>
         )}
+      </div>
+      <div className="list-detail-content">
+        
 
         <h2>{list.title}</h2>
         

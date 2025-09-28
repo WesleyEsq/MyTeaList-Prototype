@@ -3,7 +3,7 @@ import { updateRowInList, deleteRowFromList } from '../services/rowService.js';
 import { auth } from '../firebase.js';
 import Spinner from './Spinner.jsx';
 import '../styles/CreateListModal.css'; // Mantiene estilos base
-import '../styles/EditRowModal.css';   // Estilos específicos y overrides
+import '../styles/EditListModal.css';   // Estilos de los modals de edición internos
 
 // --- Iconos ---
 const CloseIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>;
@@ -59,7 +59,7 @@ function EditRowModal({ listId, rowData, onClose }) {
         setIsDeleting(false);
       }
     }
-  };
+  };// /* */
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -75,17 +75,19 @@ function EditRowModal({ listId, rowData, onClose }) {
         <form onSubmit={handleUpdate}>
           <div className="image-preview-wrapper edit-row-image">
             <label>Entry Image</label>
-            <div className="current-image-container">
+            <label htmlFor="row-image-edit-input" className="current-image-container">
               {imagePreview ? (
                 <img src={imagePreview} alt={name} className="current-image-preview" />
               ) : (
                 <div className="current-image-placeholder">No Image</div>
               )}
-            </div>
+            </label>
+            
             <label htmlFor="row-image-edit-input" className="change-image-btn">Change Image</label>
-            <input id="row-image-edit-input" type="file" accept="image/*" onChange={handleImageChange} />
-          </div>
-          
+            
+            {/* Este input ahora es activado por ambos labels y debe estar oculto por el CSS */}
+            <input id="row-image-edit-input" type="file" accept="image/*" onChange={handleImageChange} style={{ display: 'none' }} />
+          </div>          
           <div className="input-group-modal">
             <label htmlFor="name-edit">Name</label>
             <input id="name-edit" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
